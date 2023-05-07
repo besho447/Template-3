@@ -592,6 +592,82 @@ li {
     color: #ffc107;
 }
 /* End testimonials */
+/* Start Team */
+.team {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    position: relative;
+}
+.team .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+.team .box {
+    position: relative;
+}
+.team .box .data {
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+}
+.team .box .data img {
+    width: calc(100% - 60px);
+    border-radius: 10px;
+    transition: var(--main-transition);
+}
+.team .box:hover img {
+    filter: grayscale(100%);
+}
+.team .box::after,
+.team .box::before {
+    content: "";
+    background-color: #f3f3f3;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 10px;
+    transition: var(--main-transition);
+}
+.team .box::before {
+    width: calc(100% - 60px);
+    z-index: -2;
+}
+.team .box::after {
+    background-color: #e4e4e4;
+    width: 0;
+    z-index: -1;
+}
+.team .box:hover::after {
+    width: calc(100% - 60px);
+}
+.team .box .data .social {
+    margin: 20px;
+}
+.team .box .data .social a {
+    color: var(--paragraph-color);
+}
+.team .box .data .social i:hover {
+    color: var(--main-color);
+}
+.team .box .data .social i {
+    padding-top: 20px;
+}
+.team .box .info {
+    padding: 25px 75px 10px;
+}
+.team .box .info h3 , p {
+    margin: 0;
+}
+.team .box .info h3 {
+    color: var(--main-color-alt);
+    margin-bottom: 10px;
+}
+.team .box:hover h3 {
+    color: var(--paragraph-color);
+}
+/* End Team */
 /* Start Animation */
 @keyframes move-down {
     0%, 100% {
