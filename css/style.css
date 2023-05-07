@@ -55,11 +55,12 @@ li {
 .main-title {
     border: 2px solid;
     padding: 10px 20px;
+    margin: 0 auto 80px;
+    font-size: 30px;
     width: fit-content;
     position: relative;
     text-transform: uppercase;
-    margin: 0 auto 80px;
-    font-size: 30px;
+    z-index: 1;
 }
 .main-title::before,
 .main-title::after {
@@ -378,6 +379,7 @@ li {
     padding-bottom: var(--main-padding);
     position: relative;
     background-color: var(--section-background);
+
 }
 .gallery .container {
     display: grid;
@@ -535,13 +537,13 @@ li {
     max-width: 100%;
 }
 /* End Features */
-/* Start Testi */
-.testi {
+/* Start testimonials */
+.testimonials {
     padding-top: var(--main-padding);
     padding-bottom: var(--main-padding);
     background-color: var(--section-background);
 }
-.testi .container {
+.testimonials .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 40px;
@@ -549,23 +551,27 @@ li {
 .test .box {
 
 }
-.testi .box img {
+.testimonials .box img {
     width: 90px;
-    border-radius: 50%
+    border-radius: 50%;
+    position: relative;
 }
-.testi .box h3 {
+.testimonials .box img::before {
+    content: '';
+}
+.testimonials .box h3 {
 
 }
-.testi .box .rate {
+.testimonials .box .rate {
 
 }
-.testi .box .rate .filled {
+.testimonials .box .rate .filled {
     
 }
-.testi .box p {
+.testimonials .box p {
 
 }
-/* End Testi */
+/* End testimonials */
 /* Start Animation */
 @keyframes move-down {
     0%, 100% {
