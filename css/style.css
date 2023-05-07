@@ -5,7 +5,8 @@
     --main-transition: 0.3s;
     --section-background: #ececec;
     --paragraph-color: #666;
-    --main-padding: 100px
+    --main-padding: 100px;
+    --line-height: 1.5;
 }
 /* End Variable */
 /* Start Global Rules */
@@ -354,7 +355,7 @@ li {
 }
 .articles .box .content p {
     color: var(--paragraph-color);
-    line-height: 1.5;
+    line-height: var(--line-height);
     margin: 10px 0 0;
 }
 .articles .box .info {
@@ -545,31 +546,50 @@ li {
 }
 .testimonials .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 40px;
 }
-.test .box {
-
+.testimonials .box {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 7%)
 }
 .testimonials .box img {
-    width: 90px;
+    width: 100px;
     border-radius: 50%;
-    position: relative;
+    position: absolute;
+    right: -15px;
+    top: -45px;
+    border: 10px solid var(--section-background);
 }
-.testimonials .box img::before {
-    content: '';
+.testimonials .box img::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: var(--paragraph-color);
 }
 .testimonials .box h3 {
-
+    margin: 0 0 10px;
 }
-.testimonials .box .rate {
-
-}
-.testimonials .box .rate .filled {
-    
+.testimonials .title {
+    margin: 0 0 10px;
+    display: block;
 }
 .testimonials .box p {
-
+    margin-bottom: 0;
+    line-height: var(--line-height);
+    margin-top: 10px;
+}
+.testimonials .box p,
+.testimonials .title {
+    color: var(--paragraph-color);
+}
+.testimonials .box .rate .filled {
+    color: #ffc107;
 }
 /* End testimonials */
 /* Start Animation */
