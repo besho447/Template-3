@@ -554,7 +554,7 @@ li {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 7%)
+    box-shadow: 0 2px 4px rgb(0 0 0 / 7%);
 }
 .testimonials .box img {
     width: 100px;
@@ -643,31 +643,125 @@ li {
     width: calc(100% - 60px);
 }
 .team .box .data .social {
-    margin: 20px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
 }
 .team .box .data .social a {
-    color: var(--paragraph-color);
+    width: 60px;
+    height: 30px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.team .box .data .social i:hover {
+.team .box .data .social a:hover i {
     color: var(--main-color);
 }
 .team .box .data .social i {
-    padding-top: 20px;
+    color: var(--paragraph-color);
+    transition: var(--main-transition);
 }
 .team .box .info {
-    padding: 25px 75px 10px;
-}
-.team .box .info h3 , p {
-    margin: 0;
+    padding-left: 80px;
 }
 .team .box .info h3 {
-    color: var(--main-color-alt);
-    margin-bottom: 10px;
+    margin-bottom: 0;
+    transition: var(--main-transition);
+    color: var(--main-color);
+}
+.team .box .info p {
+    margin-top: 10px;
+    margin-bottom: 25px;
 }
 .team .box:hover h3 {
     color: var(--paragraph-color);
 }
 /* End Team */
+/* Start Services */
+.services {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-color: var(--section-background);
+    position: relative;
+}
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+.services .box {
+    counter-increment: counter;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    position: relative;
+    overflow: hidden;
+    transition: var(--main-transition);
+}
+.services .box:hover {
+    transform:  translateY(-15px);;
+}
+.services .box::before {
+    content: "";
+    background-color: var(--main-color);
+    height: 3px;
+    width: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: var(--main-transition);
+}
+.services .box:hover::before {
+    width: 100%;
+}
+.services .box i {
+    color: #d5d5d5;
+    margin: 30px auto 20px;
+    display: block;
+}
+.services .box h3 {
+    color: var(--main-color);
+    font-size: 25px;
+}
+.services .box .info {
+    text-align: right;
+    position: relative;
+    background-color: #f9f9f9;
+    padding: 15px;
+}
+.services .box .info::before {
+    content: "0" counter(counter);
+    position: absolute;
+    background-color: var(--main-color);
+    color: white;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 60px;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+}
+.services .box .info::after {
+    content: "";
+    transform: skewX(-30deg);
+    background-color: #d4d4d4;
+    height: calc(100% + 0.9px);
+    position: absolute;
+    top: 0px;
+    left: 60px;
+    width: 50px;
+}
+.services .box .info a {
+    color: var(--main-color);
+}
+/* End Services */
 /* Start Animation */
 @keyframes move-down {
     0%, 100% {
