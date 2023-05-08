@@ -762,6 +762,115 @@ li {
     color: var(--main-color);
 }
 /* End Services */
+/* Start Skills */
+.our-skills {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+.our-skills .container {
+    display: flex;
+    align-items: center;
+}
+@media (max-width: 991px){
+    .our-skills .container img {
+        display: none;
+    }
+}
+.our-skills .skills {
+    flex: 1;
+}
+.our-skills .skill {
+    font-size: 20px;
+}
+.our-skills .container h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.our-skills .container h3 span {
+    color: var(--main-color);
+    font-size: 15px;
+    border: 1px solid #ccc;
+    padding: 2px 3px;
+    border-radius: 5px;
+}
+.our-skills .prog {
+    background-color: var(--section-background);
+    height: 30px;
+    position: relative;
+}
+.our-skills .prog span {
+    background-color: var(--main-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+/* End Skills */
+/* Start Work */
+.work {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-color: var(--section-background);
+    position: relative;
+}
+.work .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.work .container > img {
+    max-width: 100%;
+    margin-right: 100px;
+}
+.work .box {
+    background-color: #f3f3f3;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    border: 2px solid white;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.work .box::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: #ededed;
+    transform: translate(-50%, -50%);
+    transition: calc(var(--main-transition) + .2s);
+    z-index: -1;
+}
+.work .box:hover::before {
+    width: 100%;
+    height: 100%;
+}
+.work .box img {
+    width: 70px;
+    margin-right: 50px;
+}
+@media (max-width: 991px) {
+    .work .container > img {
+        display: none;
+    }
+}
+.work .box h3 {
+    font-size: 22px;
+    margin: 0;
+}
+.work .box p {
+    line-height: 1.8;
+    color: var(--paragraph-color);
+    margin: 10px 0 0;
+    font-size: 18px;
+}
+/* End Work */
 /* Start Animation */
 @keyframes move-down {
     0%, 100% {
