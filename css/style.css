@@ -4,7 +4,7 @@
     --main-color-alt: #1787e0;
     --main-transition: 0.3s;
     --section-background: #ececec;
-    --paragraph-color: #666;
+    --paragraph-color: #777;
     --main-padding: 100px;
     --line-height: 1.5;
 }
@@ -1004,6 +1004,134 @@ li {
     background-color: var(--main-color-alt);
 }
 /* End Events */
+/* Start Pricing */
+.pricing {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-color: var(--section-background);
+    position: relative;
+}
+.pricing .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+.pricing .box {
+    flex: 1;
+    position: relative;
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    transition: var(--main-transition);
+    z-index: 1;
+}
+.pricing .box .popular {
+    right: 30px;
+    top: 0;
+    writing-mode: vertical-rl;
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px 10px 35px 10px;
+    position: absolute;
+    font-weight: bold;
+    font-size: 18px;
+    width: 40px;
+}
+.pricing .box .popular::before {
+    content: "";
+    position: absolute;
+    border: 24px solid;
+    bottom: 0px;
+    right: 0;
+    border-color: transparent transparent white transparent;
+    border-width: 20px;
+    transition: var(--main-transition);
+}
+.pricing .box:hover .popular::before {
+    border-color: transparent transparent #f6f5f5 transparent;
+}
+.pricing .box::before,
+.pricing .box::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 50%;
+    background-color: #f6f5f5;
+    z-index: -1;
+    transition: var(--main-transition);
+}
+.pricing .box::before {
+    top: 0;
+    left: 0;
+}
+.pricing .box::after {
+    bottom: 0;
+    right: 0;
+}
+.pricing .box:hover::after,
+.pricing .box:hover::before {
+    width: 100%;
+}
+.pricing .box h3 {
+    font-size: 25px;
+    font-weight: bold;
+    margin:30px 0 ;
+    text-transform: capitalize;
+}
+.pricing .box img {
+    width: 90px;
+    margin-bottom: 30px;
+}
+.pricing .box .price {
+    margin-bottom: 30px;
+}
+.pricing .box .price span:first-of-type {
+    display: block;
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 50px;
+}
+.pricing .box .price span:last-of-type {
+    color: var(--paragraph-color);
+}
+.pricing .box ul {
+    text-align: left;
+    padding: 0;
+}
+.pricing .box .pros li {
+    padding-top: 25px;
+    margin: 20px 0;
+    border-top: 1px solid var(--section-background);
+}
+.pricing .box .pros li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    padding-right: 10px;
+    color: var(--main-color);
+}
+.pricing .box a {
+    margin: 30px auto 10px;
+    display: block;
+    width: fit-content;
+    border-radius: 5px;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    padding: 15px 20px;
+    font-weight: bold;
+    transition: var(--main-transition);
+}
+.pricing .box a:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+@media (min-width: 1200px) {
+    .pricing .advanced {
+        transform: translateY(-25px);
+    }
+}
+/* End Pricing */
 /* Start Animation */
 @keyframes move-down {
     0%, 100% {
