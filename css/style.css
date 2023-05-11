@@ -1132,6 +1132,239 @@ li {
     }
 }
 /* End Pricing */
+/* Start Video */
+.video {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+.video .holder {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #d4d4d4;
+}
+@media (max-width: 991px) {
+    .video .holder {
+        flex-direction: column-reverse;
+    }
+}
+.video .holder .list {
+    min-width: 300px;
+    background-color: white;
+}
+.video .holder .list .name {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+.video .holder .list ul {
+    margin: 0;
+    padding: 0;
+}
+.video .holder .list ul li {
+    border-top: 1px solid var(--section-background);
+    padding: 20px;
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+.video .holder .list ul li:hover {
+    background-color: #fafafa;
+    color: var(--main-color);
+}
+.video .holder .list ul li span {
+    display: block;
+    color: var(--paragraph-color);
+    margin-top: 10px;
+}
+.video .holder .preview {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #e2e2e2;
+}
+.video .holder .preview img {
+    max-width: 100%;
+}
+.video .holder .preview .info {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+/* End Video */
+/* Start Stats */
+.stats {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    position: relative;
+    background-image: url("../imgs/stats.jpg");
+    background-size: cover;
+    min-height: 300px;
+    
+}
+.stats::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(255 255 255 / 95%);
+    width: 100%;
+    height: 100%;
+}
+.stats h2 {
+    width: fit-content;
+    font-size: 40px;
+    margin: 0 auto 30px;
+    position: relative;
+}
+.stats .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+.stats .box {
+    position: relative;
+    background-color: white;
+    padding: 10px 30px;
+    text-align: center;
+    opacity: .7;
+    transition: var(--main-transition);
+}
+.stats .box::after,
+.stats .box::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    background-color: var(--main-color);
+    transition: 1s;
+    height: 0;
+}
+.stats .box::after {
+    bottom: 0;
+    right: 0;
+}
+.stats .box::before {
+    top: 0;
+    left: 0;
+}
+.stats .box:hover::before,
+.stats .box:hover::after {
+    height: 100%;
+}
+.stats .box:hover {
+    opacity: 1;
+}
+.stats .box span {
+    font-size: 50px;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.stats .box .text{
+    color: var(--main-color-alt);
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+}
+/* End Stats */
+/* Start Discount */
+.discount {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+.discount .image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(23, 135, 224, 97%);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.discount .image{
+    position: relative;
+    background-image: url(../imgs/discount-background1.jpg);
+    background-size: cover;
+    color: white;
+    flex-basis: 50%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: change-background 10s linear infinite;
+}
+@media (max-width: 991px) {
+    .discount .image {
+        flex-basis: 100%;
+    }
+}
+.discount .form {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+@media (max-width: 991px) {
+    .discount .form {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+}
+.discount .form .input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 15px;
+    display: block;
+    margin-bottom: 25px;
+    width: 100%;
+    background-color: #f5f6f6;
+    caret-color: var(--main-color);
+}
+.discount .form .input:focus {
+    outline: none;
+}
+.discount .form textarea {
+    height: 200px;
+    resize: none;
+}
+.discount .form input[type="submit"] {
+    display: block;
+    color: white;
+    background-color: var(--main-color);
+    width: 100%;
+    border: none;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: var(--main-transition);
+    cursor: pointer;
+}
+.discount .form input[type="submit"]:hover {
+    background: var(--main-color-alt);
+}
+.discount .content {
+    text-align: center;
+    padding: 0 20px;
+}
+.discount .content h2 {
+    font-size: 35px;
+    letter-spacing: -2px;
+}
+.discount .content p {
+    line-height: 1.8;
+    font-size: 18px;
+    max-width: 500px;
+}
+.discount .image img {
+    width: 300px;
+    max-width: 100%;
+}
+/* End Discount */
 /* Start Animation */
 @keyframes move-down {
     0%, 100% {
@@ -1191,6 +1424,14 @@ li {
         width: 200%;
         height: 200%;
         opacity: 0;
+    }
+}
+@keyframes  change-background  {
+    0%, 100% {
+        background-image: url("../imgs/discount-background1.jpg");
+    }
+    50% {
+        background-image: url("../imgs/discount-background2.jpg");
     }
 }
 /*End Animation */ 
